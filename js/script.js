@@ -1,4 +1,5 @@
 const postBox = document.getElementById('postBox');
+const toggleThemeBtn = document.getElementById('toggleTheme');
 
 document.getElementById('fetchAskReddit').addEventListener('click', async () => {
   const subreddit = 'askreddit';
@@ -50,11 +51,18 @@ document.getElementById('changeLang').addEventListener('click', () => {
   }
 });
 
-// Apply dark/light theme based on user preference
+// Aplicar color en base al usuariop
 const applyTheme = (theme) => {
   document.body.classList.remove('light', 'dark');
   document.body.classList.add(theme);
 };
+
+// Alternar colores.
+toggleThemeBtn.addEventListener('click', () => {
+  const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme);
+});
 
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
