@@ -1,4 +1,4 @@
-/* Common Styles */
+/* Style común */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -9,7 +9,7 @@ body {
   height: auto;
 }
 
-/* Dark Theme */
+/* Tema oscuro */
 body.dark {
   background-color: #1a1a1b;
   color: #d7dadc;
@@ -48,7 +48,7 @@ body.dark .card-text {
   color: #d7dadc;
 }
 
-/* Light Theme */
+/* Tema claro. */
 body.light {
   background-color: #ffffff;
   color: #000000;

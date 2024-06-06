@@ -1,5 +1,6 @@
 const postBox = document.getElementById('postBox');
 const toggleThemeBtn = document.getElementById('toggleTheme');
+const themeIcon = toggleThemeBtn.querySelector('i');
 
 document.getElementById('fetchAskReddit').addEventListener('click', async () => {
   const subreddit = 'askreddit';
@@ -55,9 +56,10 @@ document.getElementById('changeLang').addEventListener('click', () => {
 const applyTheme = (theme) => {
   document.body.classList.remove('light', 'dark');
   document.body.classList.add(theme);
+  themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
 };
 
-// Alternar colores.
+// Boton de alternado
 toggleThemeBtn.addEventListener('click', () => {
   const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
