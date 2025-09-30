@@ -12,7 +12,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/api/reddit/:subreddit', async (req, res) => {
   try {
     const { subreddit } = req.params;
-    const response = await fetch(`https://www.reddit.com/r/${subreddit}/random.json`);
+    const response = await fetch(`https://www.reddit.com/r/${subreddit}/random.json`, {
+      headers: {
+        'User-Agent': 'RedditPicker/1.0.0'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Reddit API responded with status: ${response.status}`);
+    }
+    
     const data = await response.json();
     res.json(data);
   } catch (error) {
