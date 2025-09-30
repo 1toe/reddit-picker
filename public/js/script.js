@@ -3,7 +3,7 @@ const toggleThemeBtn = document.getElementById('toggleTheme');
 const themeIcon = toggleThemeBtn.querySelector('i');
 
 const fetchPost = async (subreddit) => {
-  const response = await fetch(`https://www.reddit.com/r/${subreddit}/random.json`);
+  const response = await fetch(`/api/reddit/${subreddit}`);
   const data = await response.json();
   const post = data[0].data.children[0].data;
 
