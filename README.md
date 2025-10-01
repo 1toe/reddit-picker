@@ -29,7 +29,12 @@ npm install
 
 ## Usage
 
-Start the server:
+1. Build the React application:
+```bash
+npm run build
+```
+
+2. Start the server:
 ```bash
 npm start
 ```
@@ -38,9 +43,14 @@ The application will be available at `http://localhost:3000`
 
 ## Development
 
-For development mode:
+For development mode with auto-rebuild:
 ```bash
 npm run dev
+```
+
+Then in a separate terminal, start the server:
+```bash
+npm start
 ```
 
 ## Project Structure
@@ -49,19 +59,27 @@ npm run dev
 reddit-picker/
 ├── server.js           # Express server
 ├── package.json        # Node.js dependencies and scripts
-├── public/             # Static files
-│   ├── index.html      # Main HTML file
-│   ├── css/            # Stylesheets
-│   │   └── styles.css
-│   └── js/             # Client-side JavaScript
-│       └── script.js
+├── webpack.config.js   # Webpack configuration
+├── src/                # React source files
+│   ├── index.js        # React entry point
+│   ├── index.html      # HTML template
+│   ├── App.jsx         # Main App component
+│   ├── App.css         # App styles
+│   └── components/     # React components
+│       ├── ThemeToggle.jsx
+│       ├── LanguageToggle.jsx
+│       ├── RedditButtons.jsx
+│       └── PostCard.jsx
+├── dist/               # Built React application (generated)
+├── public/             # Legacy static files (deprecated)
 └── README.md           # This file
 ```
 
 ## Technologies Used
 
 - **Backend**: Node.js, Express.js
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Frontend**: React 18, JavaScript (ES6+)
+- **Build Tools**: Webpack, Babel
 - **UI Framework**: Bootstrap 5
 - **Icons**: Font Awesome
 
